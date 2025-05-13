@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collections | GlamourCart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="diamond-loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Glamour<span>Cart</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Collections</a>
+                <a href="#">About</a>
+                <a href="#">Journal</a>
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Products Hero -->
+    <section class="page-hero">
+        <div class="hero-content">
+            <h1>Our Collections</h1>
+            <p>Curated luxury pieces for the discerning individual</p>
+        </div>
+    </section>
+
+    <!-- Collection Filter -->
+    <section class="collection-filter">
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="category-filter">Category</label>
+                <select id="category-filter" class="luxury-select">
+                    <option value="all">All Collections</option>
+                    <option value="jewelry">Signature Jewelry</option>
+                    <option value="watches">Haute Horlogerie</option>
+                    <option value="accessories">Luxury Accents</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="sort-by">Sort By</label>
+                <select id="sort-by" class="luxury-select">
+                    <option value="featured">Featured</option>
+                    <option value="price-asc">Price: Low to High</option>
+                    <option value="price-desc">Price: High to Low</option>
+                    <option value="newest">Newest Arrivals</option>
+                </select>
+            </div>
+            <div class="filter-reset">
+                <button id="reset-filters">Reset</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-section">
+        <div class="section-header">
+            <h2>Luxury Selection</h2>
+            <p>Handcrafted excellence for the modern connoisseur</p>
+        </div>
+        <div class="products-grid" id="products-container">
+            <!-- Products will be loaded dynamically from JavaScript -->
+        </div>
+        <div class="load-more">
+            <button id="load-more-btn">View More</button>
+        </div>
+    </section>
+
+    <!-- Quality Assurance -->
+    <section class="quality-assurance">
+        <div class="quality-grid">
+            <div class="quality-item">
+                <div class="quality-icon">
+                    <i class="fas fa-gem"></i>
+                </div>
+                <h3>Authenticity Guaranteed</h3>
+                <p>Every piece comes with a certificate of authenticity and lifetime warranty.</p>
+            </div>
+            <div class="quality-item">
+                <div class="quality-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure Delivery</h3>
+                <p>Discreet packaging with insured worldwide shipping and tracking.</p>
+            </div>
+            <div class="quality-item">
+                <div class="quality-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Concierge</h3>
+                <p>Personal shopping assistance available anytime via phone or chat.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>GlamourCart</h3>
+                <p>Redefining luxury ecommerce with exceptional craftsmanship and unparalleled service.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">All Collections</a></li>
+                    <li><a href="#">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Limited Editions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Personal Shopping</a></li>
+                    <li><a href="#">Gift Wrapping</a></li>
+                    <li><a href="#">International Delivery</a></li>
+                    <li><a href="#">VIP Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 750 Lux Avenue, Monaco</li>
+                    <li><i class="fas fa-phone"></i> +377 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> concierge@glamourcart.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GlamourCart. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Product Quick View Modal -->
+    <div class="quick-view-modal" id="quick-view-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+            <div class="modal-grid">
+                <div class="modal-images">
+                    <div class="main-image">
+                        <img src="" alt="" id="modal-main-image">
+                    </div>
+                    <div class="thumbnail-container" id="thumbnail-container">
+                        <!-- Thumbnails will be added here -->
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <h2 id="modal-product-title"></h2>
+                    <div class="price" id="modal-product-price"></div>
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="review-count">(42 Reviews)</span>
+                    </div>
+                    <p class="description" id="modal-product-description"></p>
+                    <div class="options">
+                        <div class="option-group">
+                            <label>Size</label>
+                            <select class="luxury-select" id="size-select">
+                                <option value="">Select Size</option>
+                                <!-- Options will be added dynamically -->
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label>Quantity</label>
+                            <div class="quantity-selector">
+                                <button class="quantity-minus"><i class="fas fa-minus"></i></button>
+                                <input type="number" value="1" min="1" id="quantity-input">
+                                <button class="quantity-plus"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button class="add-to-cart" id="modal-add-to-cart">Add to Cart</button>
+                        <button class="wishlist"><i class="far fa-heart"></i></button>
+                    </div>
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span>SKU:</span> <span id="modal-product-sku"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span>Category:</span> <span id="modal-product-category"></span>
+                        </div>
+                        <div class="meta-item">
+                            <span>Shipping:</span> <span>Free worldwide</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html>

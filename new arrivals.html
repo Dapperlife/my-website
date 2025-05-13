@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Arrivals | GlamourCart</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* New Arrivals Specific Styles */
+        .newarrivals-hero {
+            background-image: url('images/image1.jpg');
+        }
+        
+        .exclusive-banner {
+            background: linear-gradient(135deg, #1a1a1a 0%, #3a3a3a 100%);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .exclusive-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .exclusive-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border-radius: 30px;
+        }
+        
+        .exclusive-banner h2 {
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+        
+        .exclusive-banner p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .countdown-item {
+            text-align: center;
+        }
+        
+        .countdown-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+        
+        .countdown-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .newarrivals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .newarrivals-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .newarrivals-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .new-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            padding: 5px 15px;
+            border-radius: 3px;
+            font-size: 12px;
+            font-weight: 600;
+            z-index: 2;
+        }
+        
+        .newarrivals-image {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .newarrivals-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .newarrivals-card:hover .newarrivals-image img {
+            transform: scale(1.05);
+        }
+        
+        .newarrivals-actions {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            transform: translateY(20px);
+            opacity: 0;
+            transition: var(--transition);
+        }
+        
+        .newarrivals-card:hover .newarrivals-actions {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .action-btn:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .newarrivals-details {
+            padding: 20px;
+        }
+        
+        .newarrivals-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .newarrivals-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+        
+        .current-price {
+            font-weight: 700;
+            color: var(--secondary);
+            font-size: 18px;
+        }
+        
+        .original-price {
+            text-decoration: line-through;
+            color: var(--text-light);
+            font-size: 14px;
+        }
+        
+        .newarrivals-category {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .limited-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('images/limited-bg.jpg') no-repeat center center/cover;
+            padding: 100px 0;
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+        
+        .limited-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .limited-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border-radius: 30px;
+        }
+        
+        .limited-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+        
+        .limited-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .limited-cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--secondary);
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 30px;
+            transition: var(--transition);
+            border: 2px solid var(--secondary);
+        }
+        
+        .limited-cta:hover {
+            background-color: transparent;
+            color: var(--secondary);
+        }
+        
+        @media (max-width: 768px) {
+            .exclusive-banner h2 {
+                font-size: 28px;
+            }
+            
+            .limited-section h2 {
+                font-size: 32px;
+            }
+            
+            .newarrivals-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .countdown {
+                gap: 10px;
+            }
+            
+            .countdown-number {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader">
+        <div class="diamond-loader"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Glamour<span>Cart</span></a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="products.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="journal.html">Journal</a>
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- New Arrivals Hero -->
+    <section class="page-hero newarrivals-hero">
+        <div class="hero-content">
+            <h1>New Arrivals</h1>
+            <p>Discover our latest curated selections</p>
+        </div>
+    </section>
+
+    <!-- Exclusive Launch Banner -->
+    <section class="exclusive-banner">
+        <div class="exclusive-content">
+            <div class="exclusive-badge">EXCLUSIVE LAUNCH</div>
+            <h2>winter 2025 Collection</h2>
+            <p>Be among the first to explore our newest seasonal offerings, available for a limited time only to GlamourCart members. These pieces will become available to the general public in:</p>
+            <div class="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-days">07</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-hours">23</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-minutes">45</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="countdown-seconds">12</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals Grid -->
+    <section class="newarrivals-section" style="padding: 40px 0 80px;">
+        <div class="newarrivals-grid" id="newarrivals-container">
+            <!-- Product 1 -->
+            <div class="newarrivals-card">
+                <div class="new-badge">NEW</div>
+                <div class="newarrivals-image">
+                    <img src="images/51438999.jpg" alt="Celestial Diamond Earrings">
+                    <div class="newarrivals-actions">
+                        <button class="action-btn quick-view-btn" data-id="101">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" data-id="101">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="newarrivals-details">
+                    <h3 class="newarrivals-title">Celestial Diamond Earrings</h3>
+                    <div class="newarrivals-price">
+                        <span class="current-price">zar3,200</span>
+                        <span class="original-price">zar3,800</span>
+                    </div>
+                    <div class="newarrivals-category">JEWELRY</div>
+                </div>
+            </div>
+            
+            <!-- Product 2 -->
+            <div class="newarrivals-card">
+                <div class="new-badge">NEW</div>
+                <div class="newarrivals-image">
+                    <img src="images/1683118614.7185.jpeg" alt="Marine Chronograph">
+                    <div class="newarrivals-actions">
+                        <button class="action-btn quick-view-btn" data-id="102">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" data-id="102">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="newarrivals-details">
+                    <h3 class="newarrivals-title">Marine Chronograph</h3>
+                    <div class="newarrivals-price">
+                        <span class="current-price">zar12,500</span>
+                    </div>
+                    <div class="newarrivals-category">WATCHES</div>
+                </div>
+            </div>
+            
+            <!-- Product 3 -->
+            <div class="newarrivals-card">
+                <div class="new-badge">NEW</div>
+                <div class="newarrivals-image">
+                    <img src="images/small-blue-cashmere-scarf.jpg" alt="Silk & Cashmere Shawl">
+                    <div class="newarrivals-actions">
+                        <button class="action-btn quick-view-btn" data-id="103">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" data-id="103">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="newarrivals-details">
+                    <h3 class="newarrivals-title">Silk & Cashmere Shawl</h3>
+                    <div class="newarrivals-price">
+                        <span class="current-price">zar1,680</span>
+                        <span class="original-price">zar1,850</span>
+                    </div>
+                    <div class="newarrivals-category">ACCESSORIES</div>
+                </div>
+            </div>
+            
+            <!-- Product 4 -->
+            <div class="newarrivals-card">
+                <div class="new-badge">NEW</div>
+                <div class="newarrivals-image">
+                    <img src="images/s-l1200.jpg" alt="Platinum Cufflinks">
+                    <div class="newarrivals-actions">
+                        <button class="action-btn quick-view-btn" data-id="104">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" data-id="104">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="newarrivals-details">
+                    <h3 class="newarrivals-title">Platinum Cufflinks</h3>
+                    <div class="newarrivals-price">
+                        <span class="current-price">zar3,950</span>
+                    </div>
+                    <div class="newarrivals-category">ACCESSORIES</div>
+                </div>
+            </div>
+            
+            <!-- Product 5 -->
+            <div class="newarrivals-card">
+                <div class="new-badge">NEW</div>
+                <div class="newarrivals-image">
+                    <img src="images/images.jpg" alt="Sapphire Statement Ring">
+                    <div class="newarrivals-actions">
+                        <button class="action-btn quick-view-btn" data-id="105">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" data-id="105">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="newarrivals-details">
+                    <h3 class="newarrivals-title">Sapphire Statement Ring</h3>
+                    <div class="newarrivals-price">
+                        <span class="current-price">zar5,400</span>
+                    </div>
+                    <div class="newarrivals-category">JEWELRY</div>
+                </div>
+            </div>
+            
+            <!-- Product 6 -->
+            <div class="newarrivals-card">
+                <div class="new-badge">NEW</div>
+                <div class="newarrivals-image">
+                    <img src="images/aviator-sunglass-500x500.jpg" alt="Aviator Sunglasses">
+                    <div class="newarrivals-actions">
+                        <button class="action-btn quick-view-btn" data-id="106">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                        <button class="action-btn add-to-cart-btn" data-id="106">
+                            <i class="fas fa-shopping-bag"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="newarrivals-details">
+                    <h3 class="newarrivals-title">Aviator Sunglasses</h3>
+                    <div class="newarrivals-price">
+                        <span class="current-price">zar2,200</span>
+                        <span class="original-price">zar3,500</span>
+                    </div>
+                    <div class="newarrivals-category">ACCESSORIES</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Edition Section -->
+    <section class="limited-section">
+        <div class="limited-container">
+            <div class="limited-badge">LIMITED EDITION</div>
+            <h2>The Monaco Collection</h2>
+            <p>Celebrating our heritage with an exclusive capsule collection available in strictly limited quantities. Each piece is individually numbered and accompanied by a certificate of authenticity signed by our founder.</p>
+            <a href="products.html?collection=monaco" class="limited-cta">Discover Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>GlamourCart</h3>
+                <p>Redefining luxury ecommerce with exceptional craftsmanship and unparalleled service.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">All Collections</a></li>
+                    <li><a href="newarrivals.html" class="active">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Limited Editions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Personal Shopping</a></li>
+                    <li><a href="#">Gift Wrapping</a></li>
+                    <li><a href="#">International Delivery</a></li>
+                    <li><a href="#">VIP Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 750 Lux Avenue, Sandton</li>
+                    <li><i class="fas fa-phone"></i> +277 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> concierge@glamourcart.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GlamourCart. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const launchDate = new Date();
+            launchDate.setDate(now.getDate() + 7); // Set launch 7 days from now
+            
+            const diff = launchDate - now;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('countdown-days').textContent = days.toString().padStart(2, '0');
+            document.getElementById('countdown-hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('countdown-minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('countdown-seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Add to cart functionality
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const productId = e.currentTarget.getAttribute('data-id');
+                addToCart(productId, 1);
+            });
+        });
+        
+        function addToCart(productId, quantity) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // In a real app, you would fetch product details from your database
+            const product = {
+                id: productId,
+                title: document.querySelector(`.add-to-cart-btn[data-id="${productId}"]`).closest('.newarrivals-card').querySelector('.newarrivals-title').textContent,
+                price: parseFloat(document.querySelector(`.add-to-cart-btn[data-id="${productId}"]`).closest('.newarrivals-card').querySelector('.current-price').textContent.replace('$', '').replace(',', '')),
+                image: document.querySelector(`.add-to-cart-btn[data-id="${productId}"]`).closest('.newarrivals-card').querySelector('img').getAttribute('src'),
+                quantity: quantity
+            };
+            
+            const existingItem = cart.find(item => item.id === productId);
+            
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push(product);
+            }
+            
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartCount();
+            
+            // Show notification
+            showNotification(`${product.title} added to cart`);
+        }
+        
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelectorAll('.cart-count').forEach(element => {
+                element.textContent = totalItems;
+            });
+        }
+        
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.textContent = message;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.add('fade-out');
+                setTimeout(() => {
+                    notification.remove();
+                }, 300);
+            }, 3000);
+        }
+        
+        // Initialize cart count
+        updateCartCount();
+    </script>
+</body>
+</html>

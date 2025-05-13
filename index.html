@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlamourCart | Luxury Redefined</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Premium Loading Animation -->
+    <div class="loader">
+        <div class="diamond-loader"></div>
+    </div>
+
+    <!-- Sticky Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">Glamour<span>Cart</span></a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="products.html">Collections</a>
+                <a href="about.html">About</a>
+                <a href="journal.html">Journal</a>
+                <a href="cart.html" class="cart-icon"><i class="fas fa-shopping-bag"></i><span class="cart-count">0</span></a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Parallax -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Elevate Your Style</h1>
+            <p class="hero-subtitle">Discover timeless pieces crafted for the extraordinary</p>
+            <a href="products.html" class="cta-button">Explore Collections</a>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <!-- Featured Collections -->
+    <section class="featured">
+        <div class="section-header">
+            <h2>Curated Collections</h2>
+            <p>Handpicked luxury for the discerning individual</p>
+        </div>
+        <div class="collections-grid">
+            <div class="collection-card" data-category="jewelry">
+                <div class="collection-image"></div>
+                <div class="collection-overlay">
+                    <h3>Signature Jewelry</h3>
+                    <a href="products.html?category=jewelry" class="collection-link">View Pieces</a>
+                </div>
+            </div>
+            <div class="collection-card" data-category="watches">
+                <div class="collection-image"></div>
+                <div class="collection-overlay">
+                    <h3>Haute Horlogerie</h3>
+                    <a href="products.html?category=watches" class="collection-link">Explore Time</a>
+                </div>
+            </div>
+            <div class="collection-card" data-category="accessories">
+                <div class="collection-image"></div>
+                <div class="collection-overlay">
+                    <h3>Luxury Accents</h3>
+                    <a href="products.html?category=accessories" class="collection-link">Discover More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Exclusive Offer -->
+    <section class="exclusive">
+        <div class="exclusive-content">
+            <h2>Private Client Services</h2>
+            <p>Become a GlamourCart member for exclusive access, early releases, and personalized shopping experiences.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit">Apply Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Testimonials with 3D Carousel -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2>Client Experiences</h2>
+            <p>What our distinguished clients say</p>
+        </div>
+        <div class="testimonial-carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-content">
+                        <p>"The attention to detail and quality is unmatched. GlamourCart has become my only destination for luxury purchases."</p>
+                        <div class="client-info">
+                            <h4>Alexandra Windsor</h4>
+                            <span>Kloof, Durban</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-content">
+                        <p>"From the packaging to the product selection, every aspect exceeds expectations. Truly a premium experience."</p>
+                        <div class="client-info">
+                            <h4>James Nxumalo</h4>
+                            <span>Zola street, Soweto</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-content">
+                        <p>"The personal shopping service saved me hours and introduced me to pieces I wouldn't have found on my own."</p>
+                        <div class="client-info">
+                            <h4>Sophia Al-Mansour</h4>
+                            <span>Dubai, UAE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3>GlamourCart</h3>
+                <p>Redefining luxury ecommerce with exceptional craftsmanship and unparalleled service.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Shop</h3>
+                <ul>
+                    <li><a href="products.html">All Collections</a></li>
+                    <li><a href="new arrivals.html">New Arrivals</a></li>
+                    <li><a href="#">Best Sellers</a></li>
+                    <li><a href="#">Limited Editions</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Personal Shopping</a></li>
+                    <li><a href="#">Gift Wrapping</a></li>
+                    <li><a href="#">International Delivery</a></li>
+                    <li><a href="#">VIP Program</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact</h3>
+               <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 750 Lux Avenue, Sandton</li>
+                    <li><i class="fas fa-phone"></i> +277 123 4567</li>
+                    <li><i class="fas fa-envelope"></i> concierge@glamourcart.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 GlamourCart. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+</body>
+</html>
